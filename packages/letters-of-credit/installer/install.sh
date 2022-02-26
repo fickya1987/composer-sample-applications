@@ -14,10 +14,14 @@
 # REMOVE EXISTING REST SERVER, PLAYGROUND ETC
 docker rm -f $(docker ps -a | grep hyperledger/* | awk '{ print $1 }')
 
-docker pull hyperledger/composer-playground:latest
-docker pull hyperledger/composer-cli:latest
-docker pull hyperledger/composer-rest-server:latest
-docker pull hyperledger/letters-of-credit:latest
+#docker pull hyperledger/composer-playground:latest
+#docker pull hyperledger/composer-cli:latest
+#docker pull hyperledger/composer-rest-server:latest
+#docker pull hyperledger/letters-of-credit:latest
+docker load -i ~/Downloads/hyperledger-composer-playground.tar.gz
+docker load -i ~/Downloads/hyperledger-composer-cli.tar.gz
+docker load -i ~/Downloads/hyperledger-composer-rest-server.tar.gz
+docker load -i ~/Downloads/hyperledger-letters-of-credit.tar.gz
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
